@@ -3,11 +3,13 @@ __pycache__/
 *.pyc
 *.pyo
 
-# Environment variables
-.env
+# Virtual environment
+.venv
 
 # Static files
 static/src/output.css
 
 # Local settings
-settings/settings_local.py
+_project/settings/settings_local.py
+
+.env
