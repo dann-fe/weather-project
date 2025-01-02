@@ -8,14 +8,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django + Tailwind CSS</title>
-    <link rel="stylesheet" href="{% static 'src/output.css' %}"> 
+    <link rel="stylesheet" href="{% static 'src/output.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
 </head>
- 
+
 <body class="bg-green-50">
-    <div class="container mx-auto mt-4">
+    <div class="search-bar-container flex justify-center mt-4">
+        <input type="text" class="search-bar w-[80%] h-12 rounded-full border-neutral-950 border-2 bg-search-bar-color opacity-85 placeholder:text-primary placeholder:font-LexendDeca placeholder:font-light placeholder:tracking-wider pl-12 fixed bg-search-icon bg-no-repeat bg-[position:11px_13.5px] focus:text-primary text-xl shadow-search-bar" placeholder="Vyhledejte okres ČR">
+    </div>
         {% block content %}
         {% endblock content %}
-    </div>
 </body>
  
 </html>
