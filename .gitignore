@@ -13,3 +13,7 @@ static/src/output.css
 _project/settings/settings_local.py
 
 .env
+
+keys.py
+
+cache/

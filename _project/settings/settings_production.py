@@ -15,4 +15,11 @@ DATABASES = {
     }
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/home/dann1987/cache'
+    }
+}
+
 STATIC_ROOT = BASE_DIR / 'static/'

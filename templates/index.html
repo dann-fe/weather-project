@@ -1,11 +1,22 @@
 {% extends "_base.html" %}
- 
-{% block content %}
-<div class="flex flex-row gap-20 justify-center mt-[6.5%]">
-    <div class="county-card w-[300px] h-[400px] bg-primary rounded-2xl shadow-okres-card"></div>
-    <div class="county-card w-[300px] h-[400px] bg-primary rounded-2xl shadow-okres-card"></div>
-    <div class="county-card w-[300px] h-[400px] bg-primary rounded-2xl shadow-okres-card"></div>
-    <div class="county-card w-[300px] h-[400px] bg-primary rounded-2xl shadow-okres-card"></div>
-</div>
 
+{% load static %}
+
+{% block content %}
+<div class="flex flex-row gap-16 mt-[6.5%] flex-wrap justify-center mx-10">
+{% for county in counties %}
+    <div class="county-card w-[400px] h-[370px] bg-primary rounded-2xl shadow-okres-card flex flex-col items-center">
+        <div class="county-card-heading flex flex-col items-center text-center mt-5">
+            <h2 class="text-white font-medium tracking-wider" style="font-size: 24px">{{county.title}}</h2>
+            <p class="text-white font-light uppercase">{{county.latitude}}°N, {{county.longitude}}°E</p>
+        </div>
+        <div class="county-map-container mt-[25px] mb-6">
+            <div class="county-map bg-gray-600 border-black border-4 w-[280px] h-[200px] rounded-lg">{{ county_map }}</div>
+        </div>
+        <div class="more-info-container flex justify-center mb-3">
+            <a href="{% url 'county_weather' county.id %}" class="more-info font-semibold text-white hover:text-[17px] duration-150 after:content-more-info after:pl-1">Podrobnosti</a>
+        </div>
+    </div>
+{% endfor %}
+</div>
 {% endblock content %}
