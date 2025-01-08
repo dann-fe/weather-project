@@ -1,11 +1,11 @@
 from pathlib import Path
-from keys import secret_key
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = secret_key
+SECRET_KEY = config('SECRET_KEY')
 
 # Application definition
 INSTALLED_APPS = [
